@@ -1,5 +1,9 @@
 # SDC1 acute aortic dissection analysis code
 
+Public code repository: https://github.com/lizonghong-lab/SDC1-AAD-analysis
+
+Audited code snapshot (19 October 2026): [`e7141450f9fb75a83d56043e0c380024dd9596fe`](https://github.com/lizonghong-lab/SDC1-AAD-analysis/tree/e7141450f9fb75a83d56043e0c380024dd9596fe). All 36 code files matched the SHA-256 values listed in `CODE_MANIFEST.json` at this snapshot.
+
 This is a **code-only** release for the revision of “Plasma extracellular vesicles proteomics identifies circulating SDC1 as a diagnostic biomarker for acute aortic dissection.” It contains 35 R scripts and one Python preprocessing script. Patient-level data, raw MS files, processed proteomics tables, figures and local software libraries are not included.
 
 The original analysis directory names have been retained for provenance. Packaging changed only machine-specific paths and moved the author-resolved patient-key mapping out of the Python code into a required private JSON configuration. No analysis was rerun or result recalculated while packaging.
@@ -21,7 +25,7 @@ The paired-compartment source was updated in the **FINAL_20260727** lock; the ot
 
 ## Input and privacy boundary
 
-The scripts expect their local project input folders, such as `02_analysis_data/`, to contain the source or derived data. In this release those folders contain only `.gitkeep`. The clinical preprocessing script also expects the four locked Excel workbooks under `data_lock/FINAL_20260727/` and requires the environment variable `SDC1_PATIENT_KEY_OVERRIDES` to point to a private JSON file with the following shape:
+The scripts expect local project input folders, such as `02_analysis_data/`, to contain the source or derived data. The required input files and empty input directories are not distributed in this repository. Users who have the approved input data must create the required directories before running the corresponding scripts. The clinical preprocessing script also expects the four locked Excel workbooks under `data_lock/FINAL_20260727/` and requires the environment variable `SDC1_PATIENT_KEY_OVERRIDES` to point to a private JSON file with the following shape:
 
 ```json
 {"overrides": [{"cohort": "clinical_evaluation", "group": "AAD", "source_row": 1, "analysis_key": "PRIVATE_KEY"}]}
@@ -43,10 +47,9 @@ The V7 script uses `SDC1_V7_ROOT`; clinical scripts use `SDC1_FINAL_ROOT`; sever
 2. Read the final clinical scripts for assay comparisons and clinical associations.
 3. Read Harrell `01_run_harrell_bootcal_analysis.R` and `05_run_standalone_harrell_bootcal.R` for the current clinical performance estimation.
 
-## Manuscript wording after publication
+## Code availability
 
-Only after the repository is public and its URL and archived version are verified may the manuscript say:
+The analysis code used for proteomic candidate prioritization, statistical analyses and figure generation is publicly available at https://github.com/lizonghong-lab/SDC1-AAD-analysis. The audited code snapshot is identified by commit `e7141450f9fb75a83d56043e0c380024dd9596fe`. Participant-level data access must be described separately in the manuscript's Data Availability statement.
 
-> The analysis code used for proteomic candidate prioritization, statistical analyses and figure generation is available at [GitHub repository URL]; the version used for this revision is archived at [DOI]. Access to participant-level data is described separately in the Data Availability statement.
+A tagged release, archival DOI and license had not been assigned at the time of this audit. No DOI or raw-MS repository accession is claimed here.
 
-The brackets are placeholders. This package has no assigned GitHub URL, DOI, license or MS-data accession.
