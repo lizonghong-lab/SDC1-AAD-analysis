@@ -1,0 +1,31 @@
+# Private data and participant-level outputs
+data_lock/
+**/02_analysis_data/*
+!**/02_analysis_data/.gitkeep
+**/04_results/
+**/07_quality_control/
+**/01_data/
+**/02_results/
+**/04_figures/
+private/
+secrets/
+
+# Data files, instrument exports and local software state
+*.rds
+*.RData
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.raw
+*.mzML
+*.wiff
+*.d/
+*.sne
+*.log
+*.tmp
+R_library/
+.Rhistory
+.RData
+__pycache__/
+.DS_Store
